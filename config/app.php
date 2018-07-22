@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://laravel-demo.test'),
 
     /*
     |--------------------------------------------------------------------------
@@ -161,6 +161,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 	    Mews\Captcha\CaptchaServiceProvider::class,
 	    Overtrue\LaravelLang\TranslationServiceProvider::class,
+	    Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -211,7 +212,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 	    'Captcha' => Mews\Captcha\Facades\Captcha::class,
-
+	    'Image'    => Intervention\Image\Facades\Image::class,
     ],
 
 ];

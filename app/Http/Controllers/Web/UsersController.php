@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Web;
 
+use App\Handlers\ImageHandler;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -36,16 +37,21 @@ class UsersController extends Controller
 
 	/**
 	 * 更新用户信息
-	 * @param UserFormRequest $resquest
+	 * @param UserFormRequest $request
 	 * @param User $user
 	 *
 	 * @return \Illuminate\Http\RedirectResponse
 	 */
-	public function update(UserFormRequest $resquest, User $user)
+	public function update(UserFormRequest $request, User $user, ImageHandler $imageHandler)
 	{
-		$data = $resquest->all();
-		if ($resquest->avatar) {
-			//todo:待做
+		$data = $request->all();
+
+		//头像上传
+		if ($request->avatar) {
+			$result = $imageHandler->upload($request->avatar, 'avatars', $user->id, 365);
+			if ($result) {
+				$data['avatar'] = $result['path'];
+			}
 		}
 
 		$user->update($data);

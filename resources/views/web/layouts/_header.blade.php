@@ -41,7 +41,7 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
               <span>
-                <img class="rounded-circle" src="http://pbfa6u6aq.bkt.clouddn.com/image/user/avatar/Ji3ohCho5Quov5UL.jpg" width="30px" height="30px" alt="头像">
+                <img class="rounded-circle" src="{{ Auth::user()->avatar }}" width="30px" height="30px" alt="头像">
               </span>
                             {{ Auth::user()->name }}
                             <span class="caret"></span>

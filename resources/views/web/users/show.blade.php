@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-body">
                         <img class="card-img-top img-thumbnail"
-                             src="http://pbfa6u6aq.bkt.clouddn.com/image/user/avatar/Ji3ohCho5Quov5UL.jpg"
+                             src="{{ $user->avatar }}"
                              width="300px" height="300px"
                              alt="个人头像">
                         <hr>
