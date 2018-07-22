@@ -1,0 +1,44 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/child', function () {
+	return view('child');
+});
+Route::get('/welcome', function () {
+	return view('start', [
+		'name' => 'Hello world!',
+		'content' => '<script type="text/javascript">alert("1111");</script>',
+		'array' => ['name' => 'test', 'created_at' => time()]
+	]);
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['namespace' => 'Web'], function () {
+	//默认欢迎页
+	Route::get('/', function () {
+		return view('welcome');
+	});
+
+	//用户
+	Auth::Routes();
+
+	Route::get('/home', 'DefaultsController@index')->name('home');
+
+	// 用户中心。
+	Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+});
