@@ -19,20 +19,14 @@ class SeedCategoriesData extends Migration
 		    [
 			    'name' => '分享',
 			    'description' => '悲伤可以自行料理；而欢乐的滋味如果要充分体会，你就必须有人分享才行。',
-			    'created_at' => $now,
-			    'updated_at' => $now,
 		    ],
 		    [
 			    'name' => '教程',
 			    'description' => '在寻求真理的长河中，唯有学习，不断地学习，勤奋地学习，有创造性地学习，才能越重山跨峻岭。',
-			    'created_at' => $now,
-			    'updated_at' => $now,
 		    ],
 		    [
 			    'name' => '对话',
 			    'description' => '与人交谈一次，往往比多年闭门劳作更能启发心智。思想必定是在与人交往中产生，而在孤独中进行加工和表达。',
-			    'created_at' => $now,
-			    'updated_at' => $now,
 		    ],
 		    [
 			    'name' => '公告',
@@ -46,6 +40,7 @@ class SeedCategoriesData extends Migration
 
 		    return $value;
 	    }, $categories);
+
 
 	    \Illuminate\Support\Facades\DB::table('categories')->insert($categories);
     }
