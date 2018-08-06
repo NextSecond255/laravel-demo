@@ -46,5 +46,5 @@ Route::group(['namespace' => 'Web'], function () {
 	Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 
 	//话题中心
-	Route::resource('topics', 'TopicsController');
+	Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'update', 'create', 'store']]);
 });

@@ -15,7 +15,7 @@
                 <div class="card">
                     <div class="card-header">
                         <nav class="nav nav-pills nav-justified">
-                            <a class="nav-link {{ active_class(!if_query('order', 'recent')) }}"
+                            <a class="nav-link {{ active_class(if_query('order', 'default')) }}"
                                href="{{ Request::url() }}?order=default">最后回复</a>
                             <a class="nav-link {{ active_class(!if_query('order', 'default')) }}"
                                href="{{ Request::url() }}?order=recent" href="{{ Request::url() }}?order=recent">最新回复</a>

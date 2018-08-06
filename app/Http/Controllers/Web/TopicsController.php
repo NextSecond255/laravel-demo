@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\web;
 
+use App\Http\Requests\Web\TopicFormRequest;
 use App\Models\Category;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class TopicsController extends Controller
 {
@@ -61,8 +63,12 @@ class TopicsController extends Controller
 
     }
 
-    public function store()
+    public function store(TopicFormRequest $request, Topic $topic)
     {
+		$topic->fill($request->all());
+		$topic->user_id = Auth::id();
+		$topic->save();
 
+		return redirect()->to($topic->link())->with('话题创建成功！');
     }
 }

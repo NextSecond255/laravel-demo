@@ -19,7 +19,7 @@
                         </a>
                         <span>&nbsp;•&nbsp;</span>
                         <i class="fa fa-clock-o"></i>
-                        <span class="timeago" title="最后活跃于">{{ isset($topic->update_at) ? \Illuminate\Support\Carbon::parse($topic->update_at)->diffForHumans() : null }}</span>
+                        <span class="timeago" title="最后活跃于">{{ isset($topic->updated_at) ? \Illuminate\Support\Carbon::parse($topic->updated_at)->diffForHumans() : null }}</span>
                     </div>
                 </div>
             </li>

@@ -21,11 +21,11 @@ trait OrderTrait
 	}
 	public function scopeUpdateAsc(Builder $builder)
 	{
-		return $builder->orderBy('update_at', 'asc');
+		return $builder->orderBy('updated_at', 'asc');
 	}
 	public function scopeUpdateDesc(Builder $builder)
 	{
-		return $builder->orderBy('update_at', 'desc');
+		return $builder->orderBy('updated_at', 'desc');
 	}
 	public function scopeOrderAsc(Builder $builder)
 	{

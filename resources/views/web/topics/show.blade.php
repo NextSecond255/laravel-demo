@@ -1,3 +1,3 @@
-@extends('web.layouts.app)
+@extends('web.layouts.app')
 
 @section('title', '话题详情')
