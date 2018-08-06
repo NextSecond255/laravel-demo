@@ -18,4 +18,34 @@ class Topic extends Model
 	    'excerpt',
 	    'slug'
     ];
+
+	/**
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+    public function user()
+    {
+    	return $this->belongsTo(User::class);
+    }
+
+	/**
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+    public function category()
+    {
+    	return $this->belongsTo(Category::class);
+    }
+
+	/**
+	 * 话题详情
+	 *
+	 * @param array $args
+	 *
+	 * @return string
+	 */
+    public function link($args = [])
+    {
+    	return route('topics.show', array_merge([$this->id, $this->slug], $args));
+    }
 }

@@ -163,6 +163,7 @@ return [
 	    Overtrue\LaravelLang\TranslationServiceProvider::class,
 	    Intervention\Image\ImageServiceProvider::class,
 	    HieuLe\Active\ActiveServiceProvider::class,
+	    Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
@@ -215,6 +216,7 @@ return [
 	    'Captcha' => Mews\Captcha\Facades\Captcha::class,
 	    'Image'    => Intervention\Image\Facades\Image::class,
 	    'Active' => HieuLe\Active\Facades\Active::class,
+	    'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

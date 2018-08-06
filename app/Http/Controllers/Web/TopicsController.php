@@ -9,6 +9,11 @@ use App\Http\Controllers\Controller;
 
 class TopicsController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('auth', ['except' => ['index', 'show']]);
+	}
+
 	/**
 	 * 话题列表
 	 *
@@ -19,7 +24,9 @@ class TopicsController extends Controller
 	 */
     public function index(Request $request, Topic $topic)
     {
-    	return view('web.topics.index', compact('topic'));
+    	$topics = $topic->paginate(20);
+
+    	return view('web.topics.index', compact('topics'));
     }
 
 	/**

@@ -1,6 +1,6 @@
 @extends('web.layouts.app')
 
-@section('title', '话题列表')
+@section('title', isset($category->name) ?: '话题列表')
 
 @section('content')
     <div class="container">
@@ -15,12 +15,16 @@
                 <div class="card">
                     <div class="card-header">
                         <nav class="nav nav-pills nav-justified">
-                            <a class="nav-link" href="{{ Request::url() }}?order=default">最后回复</a>
+                            <a class="nav-link active" href="{{ Request::url() }}?order=default">最后回复</a>
                             <a class="nav-link" href="{{ Request::url() }}?order=recent">最新回复</a>
                         </nav>
                     </div>
                     <div class="card-body">
-                        {{--@include('web.topics._topic_list')--}}
+                        {{--话题列表--}}
+                        @include('web.topics._topic_list', ['topics' => $topics])
+
+                        {{--话题分页--}}
+                        {{--{!! $topics->appends(Request::except('page'))->render() !!}--}}
                     </div>
                 </div>
             </div>

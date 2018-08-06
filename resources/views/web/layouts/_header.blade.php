@@ -12,7 +12,19 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="#">
-                    <a href="#" class="nav-link"> 首页<span class="sr-only"></span></a>
+                    <a href="{{ route('topics.index') }}" class="nav-link"> 首页<span class="sr-only"></span></a>
+                </li>
+                <li class="#">
+                    <a href="#" class="nav-link"> 分享<span class="sr-only"></span></a>
+                </li>
+                <li class="#">
+                    <a href="#" class="nav-link"> 教程<span class="sr-only"></span></a>
+                </li>
+                <li class="#">
+                    <a href="#" class="nav-link"> 对话<span class="sr-only"></span></a>
+                </li>
+                <li class="#">
+                    <a href="#" class="nav-link"> 公告<span class="sr-only"></span></a>
                 </li>
             </ul>
 

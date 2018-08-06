@@ -88,3 +88,20 @@ body {
   }
 }
 
+.welcome-page,
+.topics-index-page,
+.categories-show-page {
+  .topic-list a {
+    color: #444;
+  }
+
+  .topic-list .media-meta {
+    font-size: 0.9em;
+    color: #b3b3b3;
+  }
+
+  .topic-list .media-meta a {
+    color: #b3b3b3;
+  }
+}
+
