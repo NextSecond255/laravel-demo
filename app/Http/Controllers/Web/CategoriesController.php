@@ -10,10 +10,17 @@ use App\Http\Controllers\Controller;
 
 class CategoriesController extends Controller
 {
-    public function show(Request $request, Category $category)
+    public function show(Request $request, Category $category, Topic $topic)
     {
-    	$topics = Topic::where('category_id', $category->id)->paginate(20);
+//    	$topics = Topic::where('category_id', $category->id)->paginate(20);
 
-    	return view('web.topics.index', compact('topics'));
+    	$topics = $topic->withOrder($request->order)
+		    ->where('category_id', $category->id)
+		    ->paginate(20);
+
+    	return view('web.topics.index', compact(
+    		'topics',
+		    'category'
+	    ));
     }
 }
