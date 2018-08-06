@@ -17,7 +17,7 @@
                         <p class="card-text">中国人民解放军炮兵指挥学院2018届新兵</p>
                         <hr>
                         <h5><strong>注册于</strong></h5>
-                        <p>3个月前</p>
+                        <p>{{ isset($user->created_at) ? \Carbon\Carbon::parse($user->created_at)->diffForHumans() : null }}</p>
                     </div>
                 </div>
             </div>
@@ -41,6 +41,7 @@
                                    class="nav-link ">Ta 的回复</a>
                             </li>
                         </ul>
+                        @include('web.users._topics', ['topics' => $user->topics()->withOrder('recent')->paginate(5)])
                     </div>
                 </div>
             </div>
