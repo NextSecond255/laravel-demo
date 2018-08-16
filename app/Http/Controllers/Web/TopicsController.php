@@ -5,6 +5,7 @@ namespace App\Http\Controllers\web;
 use App\Handlers\ImageHandler;
 use App\Http\Requests\Web\TopicFormRequest;
 use App\Models\Category;
+use App\Models\Reply;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -43,7 +44,10 @@ class TopicsController extends Controller
 	 */
     public function show(Request $request, Topic $topic)
     {
-    	return view('web.topics.show', compact('topic'));
+        if (! empty($topic->slug) && $topic->slug !== $request->slug) {
+            return redirect($topic->link(), 301);
+        }
+        return view('web.topics.show', compact('topic'));
     }
 
 	/**
@@ -70,7 +74,7 @@ class TopicsController extends Controller
 		$topic->user_id = Auth::id();
 		$topic->save();
 
-		return redirect()->to($topic->link())->with('话题创建成功！');
+		return redirect()->to($topic->link())->with(['success' => '话题创建成功！']);
     }
 
     /**
@@ -102,5 +106,10 @@ class TopicsController extends Controller
         }
 
         return $data;
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
     }
 }
