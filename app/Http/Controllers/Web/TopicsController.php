@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\web;
 
+use App\Handlers\ImageHandler;
 use App\Http\Requests\Web\TopicFormRequest;
 use App\Models\Category;
 use App\Models\Topic;
@@ -70,5 +71,36 @@ class TopicsController extends Controller
 		$topic->save();
 
 		return redirect()->to($topic->link())->with('话题创建成功！');
+    }
+
+    /**
+     * 图片上传
+     * @param Request $request
+     * @param ImageHandler $images
+     *
+     * @return array
+     * @throws \Exception
+     */
+    public function upload(Request $request,ImageHandler $images)
+    {
+        $data = [
+            'status' => false,
+            'msg' => '上传失败',
+            'path' => ''
+        ];
+
+        if ($file = $request->uploader) {
+            $result = $images->upload($request->uploader, 'topics', Auth::id(), 1024);
+
+            if ($result) {
+                $data = [
+                    'status' => true,
+                    'msg' => '上传成功！',
+                    'file_path' => $result['path']
+                ];
+            }
+        }
+
+        return $data;
     }
 }

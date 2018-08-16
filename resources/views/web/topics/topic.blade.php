@@ -1,5 +1,28 @@
 @extends('web.layouts.app')
 
+@section('scripts')
+    <script src="{{ asset('fonts/vendor/simditor/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('fonts/vendor/simditor/js/module.js') }}"></script>
+    <script src="{{ asset('fonts/vendor/simditor/js/hotkeys.js') }}"></script>
+    <script src="{{ asset('fonts/vendor/simditor/js/uploader.js') }}"></script>
+    <script src="{{ asset('fonts/vendor/simditor/js/simditor.js') }}"></script>
+
+    <script>
+        (function ($) {
+            var editor = new Simditor({
+                textarea: $('#editor'),
+                upload: {
+                    url: '{{ route('topics.upload') }}',
+                    params: {_token: '{{ csrf_token() }}'},
+                    fileKey: 'uploader',
+                    connectionCount: 3,
+                    leaveConfirm: '文件上传中，关闭页面将取消上传！'
+                },
+                pasteImage: true
+            });
+        })(jQuery);
+    </script>
+@stop
 @section('content')
     <div class="container">
         <div class="col-md-10 offset-1">
