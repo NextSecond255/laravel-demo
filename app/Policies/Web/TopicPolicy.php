@@ -24,4 +24,9 @@ class TopicPolicy
     {
         return $user->isAuthor($topic);
     }
+
+    public function destory(User $user, Topic $topic)
+    {
+        return $user->isAuthor($topic);
+    }
 }

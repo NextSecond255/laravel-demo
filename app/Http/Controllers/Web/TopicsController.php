@@ -7,6 +7,7 @@ use App\Http\Requests\Web\TopicFormRequest;
 use App\Models\Category;
 use App\Models\Reply;
 use App\Models\Topic;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -143,7 +144,7 @@ class TopicsController extends Controller
     {
         try {
             $this->authorize('update', $topic);
-        } catch (\Exception $e) {
+        } catch (AuthorizationException $e) {
 
         }
 
@@ -152,5 +153,27 @@ class TopicsController extends Controller
             'topic',
             'categories'
         ));
+    }
+
+    /**
+     * 删除
+     *
+     * @param Topic $topic
+     * @throws \Exception
+     */
+    public function destory(Topic $topic)
+    {
+        try
+        {
+            $this->authorize('destroy', $topic);
+        } catch (AuthorizationException $e) {
+
+        }
+
+        $topic->delete();
+
+        $this->redirect()
+            ->route('topics.index')
+            ->with(['success' => '删除话题成功']);
     }
 }
