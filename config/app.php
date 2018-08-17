@@ -164,6 +164,7 @@ return [
 	    Intervention\Image\ImageServiceProvider::class,
 	    HieuLe\Active\ActiveServiceProvider::class,
 	    Barryvdh\Debugbar\ServiceProvider::class,
+        Mews\Purifier\PurifierServiceProvider::class,
 
     ],
 
@@ -217,6 +218,7 @@ return [
 	    'Image'    => Intervention\Image\Facades\Image::class,
 	    'Active' => HieuLe\Active\Facades\Active::class,
 	    'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Purifier' => Mews\Purifier\Facades\Purifier::class,
     ],
 
 ];

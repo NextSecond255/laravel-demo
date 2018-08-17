@@ -63,9 +63,28 @@ class TopicsController extends Controller
     	return view('web.topics.topic', compact('topic', 'categories'));
     }
 
-    public function update()
+    /**
+     * 更新
+     * @param TopicFormRequest $request
+     * @param Topic $topic
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function update(TopicFormRequest $request, Topic $topic)
     {
+        try {
+            $this->authorize('update', $topic);
+        } catch (AuthorizationException $e){
 
+        }
+
+        $topic->update($request->all());
+
+
+        return redirect()
+            ->to($topic->link())
+            ->with(['message'=>'话题更新成功！']);
     }
 
     public function store(TopicFormRequest $request, Topic $topic)
@@ -111,5 +130,27 @@ class TopicsController extends Controller
     public function replies()
     {
         return $this->hasMany(Reply::class);
+    }
+
+    /**
+     * 编辑页
+     *
+     * @param Topic $topic
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit(Topic $topic)
+    {
+        try {
+            $this->authorize('update', $topic);
+        } catch (\Exception $e) {
+
+        }
+
+        $categories = Category::all();
+        return view('web.topics.topic', compact(
+            'topic',
+            'categories'
+        ));
     }
 }

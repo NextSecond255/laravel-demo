@@ -46,7 +46,7 @@ Route::group(['namespace' => 'Web'], function () {
 	Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 
 	//话题中心
-	Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'update', 'create', 'store']]);
+	Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'update', 'create', 'store', 'edit', 'destroy']]);
 
 	//图片上传
     Route::post('upload', 'TopicsController@upload')->name('topics.upload');

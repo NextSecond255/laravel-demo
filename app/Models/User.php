@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -37,4 +38,16 @@ class User extends Authenticatable
 	{
 		return $this->hasMany(Topic::class);
 	}
+
+    /**
+     * 判断是否是作者
+     *
+     * @param Model $model
+     *
+     * @return bool
+     */
+	public function isAuthor(Model $model)
+    {
+        return $this->id == $model->user_id;
+    }
 }

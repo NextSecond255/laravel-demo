@@ -1,3 +1,4 @@
+@extends('web.layouts.app')
 @section('title', $topic->title)
 @section('description', $topic->excerpt)
 @section('content')
@@ -9,7 +10,7 @@
                         <p class="card-text text-center">作者： {{ $topic->user->name }}</p>
                         <hr>
                         <img class="card-img-top img-thumbnail"
-                             src="{{ $topic->user->avator }}"
+                             src="{{ $topic->user->avatar }}"
                              width="300px" height="300px"
                              alt="个人头像">
                     </div>
@@ -23,11 +24,11 @@
                         </h1>
                         <div class="article-meta text-center">
                             <i class="fa fa-clock-o"></i> {{ $topic->created_at->diffForHumans() }}
-                            .$nbsp;
+                            .&nbsp;
                             <i class="fa fa-comment-o"></i> {{ $topic->reply_count }}
                         </div>
                         <div class="row topic-body">
-                            <div class="col-md-12">{!! $topic->body !!}</div>
+                            <div class="col-md-12">{!! $topic->content !!}</div>
                         </div>
                         <hr>
                         <div class="row">
