@@ -88,6 +88,14 @@ class TopicsController extends Controller
             ->with(['message'=>'话题更新成功！']);
     }
 
+    /**
+     * 话题创建
+     *
+     * @param TopicFormRequest $request
+     * @param Topic $topic
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(TopicFormRequest $request, Topic $topic)
     {
 		$topic->fill($request->all());
