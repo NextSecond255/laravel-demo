@@ -47,7 +47,7 @@ class TranslateHandler
         } else {
             $text = $result['translation'][0] ?: '';
         }
-        
+
         return str_slug($text);
     }
 
