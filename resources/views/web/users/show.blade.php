@@ -24,7 +24,7 @@
             <div class="col-lg col-lg-9 col-md-9 col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        Alphabeter
+                        {{ $user->name }}
                         <small>Alphabeter@qq.com</small>
                     </div>
                 </div>
@@ -34,14 +34,18 @@
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
                                 <a href="{{ route('users.show', $user->id) }}"
-                                   class="nav-link active">Ta 的话题</a>
+                                   class="nav-link {{ active_class(if_query('tab', null)) }}">Ta 的话题</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('users.show', [$user->id, 'tab' => 'replies']) }}"
-                                   class="nav-link ">Ta 的回复</a>
+                                   class="nav-link {{ active_class(if_query('tab', 'replies')) }}">Ta 的回复</a>
                             </li>
                         </ul>
-                        @include('web.users._topics', ['topics' => $user->topics()->withOrder('recent')->paginate(5)])
+                        @if (if_query('tab', 'replies'))
+                            @include('web.users.partials.replies', ['replies' => $user->replies()->with('topic')->updateDesc()->paginate(5)])
+                        @else
+                            @include('web.users.partials.topics', ['topics' => $user->topics()->updateDesc()->paginate(5)])
+                        @endif
                     </div>
                 </div>
             </div>

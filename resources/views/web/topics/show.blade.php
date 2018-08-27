@@ -56,7 +56,8 @@
                     <div class="card-body">
                         <div class="row reply-list">
                             <div class="col col-md-12">
-                                @includeWhen(Auth::check(), 'web.topics._reply_box', ['topic' => $topic])
+                                @includeWhen(\Illuminate\Support\Facades\Auth::check(), 'web.topics.partials.reply_box', ['topic' => $topic])
+                                @include('web.topics.partials.reply_list', ['replies' => $topic->replies()->with('user')->get()])
                             </div>
                         </div>
                     </div>

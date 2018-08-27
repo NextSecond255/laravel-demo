@@ -70,4 +70,9 @@ class Topic extends Model
 
 	    return $builder->with('user', 'category');
     }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
 }
