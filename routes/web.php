@@ -54,4 +54,6 @@ Route::group(['namespace' => 'Web'], function () {
     Route::post('upload', 'TopicsController@upload')->name('topics.upload');
     // 话题回复。
     Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
+    // 回复通知。
+    Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);
 });
