@@ -1,6 +1,6 @@
 <ul class="list-unstyled">
     @foreach($replies as $index => $reply)
-        <li class="media">
+        <li class="media" id="reply{{ $reply->id }}">
             <a href="{{ route('users.show', [$reply->user_id]) }}">
                 <img src="{{ $reply->user->avatar }}" title="{{ $reply->user->name }}"
                      alt="{{ $reply->user->name }}" class="mr-3 img-thumbnail"

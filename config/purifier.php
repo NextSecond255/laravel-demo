@@ -60,7 +60,7 @@ return [
 				// http://developers.whatwg.org/the-video-element.html#the-video-element
                 ['video', 'Block', 'Optional: (source, Flow) | (Flow, source) | Flow', 'Common', [
                     'src' => 'URI',
-					'type' => 'Text',
+					'types' => 'Text',
 					'width' => 'Length',
 					'height' => 'Length',
 					'poster' => 'URI',
@@ -69,7 +69,7 @@ return [
                 ]],
                 ['source', 'Block', 'Flow', 'Common', [
 					'src' => 'URI',
-					'type' => 'Text',
+					'types' => 'Text',
                 ]],
 
 				// http://developers.whatwg.org/text-level-semantics.html

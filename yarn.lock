@@ -129,9 +129,9 @@ aproba@^1.0.3, aproba@^1.1.1:
 
 archive-type@^3.0.0, archive-type@^3.0.1:
   version "3.2.0"
-  resolved "https://registry.yarnpkg.com/archive-type/-/archive-type-3.2.0.tgz#9cd9c006957ebe95fadad5bd6098942a813737f6"
+  resolved "https://registry.yarnpkg.com/archive-types/-/archive-types-3.2.0.tgz#9cd9c006957ebe95fadad5bd6098942a813737f6"
   dependencies:
-    file-type "^3.1.0"
+    file-types "^3.1.0"
 
 are-we-there-yet@~1.1.2:
   version "1.1.5"
@@ -843,7 +843,7 @@ bin-build@^2.0.0, bin-build@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/bin-build/-/bin-build-2.2.0.tgz#11f8dd61f70ffcfa2bdcaa5b46f5e8fedd4221cc"
   dependencies:
-    archive-type "^3.0.1"
+    archive-types "^3.0.1"
     decompress "^3.0.0"
     download "^4.1.2"
     exec-series "^1.0.0"
@@ -923,7 +923,7 @@ body-parser@1.18.2:
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.18.2.tgz#87678a19d84b47d859b83199bd59bce222b10454"
   dependencies:
     bytes "3.0.0"
-    content-type "~1.0.4"
+    content-types "~1.0.4"
     debug "2.6.9"
     depd "~1.1.1"
     http-errors "~1.6.2"
@@ -931,7 +931,7 @@ body-parser@1.18.2:
     on-finished "~2.3.0"
     qs "6.5.1"
     raw-body "2.3.2"
-    type-is "~1.6.15"
+    types-is "~1.6.15"
 
 bonjour@^3.5.0:
   version "3.5.0"
@@ -1101,7 +1101,7 @@ buffer-to-vinyl@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/buffer-to-vinyl/-/buffer-to-vinyl-1.1.0.tgz#00f15faee3ab7a1dda2cde6d9121bffdd07b2262"
   dependencies:
-    file-type "^3.1.0"
+    file-types "^3.1.0"
     readable-stream "^2.0.2"
     uuid "^2.0.1"
     vinyl "^1.0.0"
@@ -1537,7 +1537,7 @@ content-disposition@0.5.2, content-disposition@^0.5.2:
 
 content-type@~1.0.4:
   version "1.0.4"
-  resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
+  resolved "https://registry.yarnpkg.com/content-types/-/content-types-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
 
 convert-source-map@^0.3.3:
   version "0.3.5"
@@ -1895,7 +1895,7 @@ decompress-tar@^4.0.0, decompress-tar@^4.1.0, decompress-tar@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/decompress-tar/-/decompress-tar-4.1.1.tgz#718cbd3fcb16209716e70a26b84e7ba4592e5af1"
   dependencies:
-    file-type "^5.2.0"
+    file-types "^5.2.0"
     is-stream "^1.1.0"
     tar-stream "^1.5.2"
 
@@ -1916,7 +1916,7 @@ decompress-tarbz2@^4.0.0:
   resolved "https://registry.yarnpkg.com/decompress-tarbz2/-/decompress-tarbz2-4.1.1.tgz#3082a5b880ea4043816349f378b56c516be1a39b"
   dependencies:
     decompress-tar "^4.1.0"
-    file-type "^6.1.0"
+    file-types "^6.1.0"
     is-stream "^1.1.0"
     seek-bzip "^1.0.5"
     unbzip2-stream "^1.0.9"
@@ -1937,7 +1937,7 @@ decompress-targz@^4.0.0:
   resolved "https://registry.yarnpkg.com/decompress-targz/-/decompress-targz-4.1.1.tgz#c09bc35c4d11f3de09f2d2da53e9de23e7ce1eee"
   dependencies:
     decompress-tar "^4.1.1"
-    file-type "^5.2.0"
+    file-types "^5.2.0"
     is-stream "^1.1.0"
 
 decompress-unzip@^3.0.0:
@@ -1956,7 +1956,7 @@ decompress-unzip@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/decompress-unzip/-/decompress-unzip-4.0.1.tgz#deaaccdfd14aeaf85578f733ae8210f9b4848f69"
   dependencies:
-    file-type "^3.8.0"
+    file-types "^3.8.0"
     get-stream "^2.2.0"
     pify "^2.3.0"
     yauzl "^2.4.2"
@@ -2165,7 +2165,7 @@ download@^6.2.2:
     content-disposition "^0.5.2"
     decompress "^4.0.0"
     ext-name "^5.0.0"
-    file-type "5.2.0"
+    file-types "5.2.0"
     filenamify "^2.0.0"
     get-stream "^3.0.0"
     got "^7.0.0"
@@ -2520,7 +2520,7 @@ express@^4.16.2:
     array-flatten "1.1.1"
     body-parser "1.18.2"
     content-disposition "0.5.2"
-    content-type "~1.0.4"
+    content-types "~1.0.4"
     cookie "0.3.1"
     cookie-signature "1.0.6"
     debug "2.6.9"
@@ -2543,7 +2543,7 @@ express@^4.16.2:
     serve-static "1.13.2"
     setprototypeof "1.1.0"
     statuses "~1.4.0"
-    type-is "~1.6.16"
+    types-is "~1.6.16"
     utils-merge "1.0.1"
     vary "~1.1.2"
 
@@ -2666,19 +2666,19 @@ file-loader@^0.11.2:
 
 file-type@5.2.0, file-type@^5.2.0:
   version "5.2.0"
-  resolved "https://registry.yarnpkg.com/file-type/-/file-type-5.2.0.tgz#2ddbea7c73ffe36368dfae49dc338c058c2b8ad6"
+  resolved "https://registry.yarnpkg.com/file-types/-/file-types-5.2.0.tgz#2ddbea7c73ffe36368dfae49dc338c058c2b8ad6"
 
 file-type@^3.1.0, file-type@^3.8.0:
   version "3.9.0"
-  resolved "https://registry.yarnpkg.com/file-type/-/file-type-3.9.0.tgz#257a078384d1db8087bc449d107d52a52672b9e9"
+  resolved "https://registry.yarnpkg.com/file-types/-/file-types-3.9.0.tgz#257a078384d1db8087bc449d107d52a52672b9e9"
 
 file-type@^4.1.0:
   version "4.4.0"
-  resolved "https://registry.yarnpkg.com/file-type/-/file-type-4.4.0.tgz#1b600e5fca1fbdc6e80c0a70c71c8dba5f7906c5"
+  resolved "https://registry.yarnpkg.com/file-types/-/file-types-4.4.0.tgz#1b600e5fca1fbdc6e80c0a70c71c8dba5f7906c5"
 
 file-type@^6.1.0:
   version "6.2.0"
-  resolved "https://registry.yarnpkg.com/file-type/-/file-type-6.2.0.tgz#e50cd75d356ffed4e306dc4f5bcf52a79903a919"
+  resolved "https://registry.yarnpkg.com/file-types/-/file-types-6.2.0.tgz#e50cd75d356ffed4e306dc4f5bcf52a79903a919"
 
 filename-regex@^2.0.0:
   version "2.0.1"
@@ -3139,7 +3139,7 @@ gulp-decompress@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/gulp-decompress/-/gulp-decompress-1.2.0.tgz#8eeb65a5e015f8ed8532cafe28454960626f0dc7"
   dependencies:
-    archive-type "^3.0.0"
+    archive-types "^3.0.0"
     decompress "^3.0.0"
     gulp-util "^3.0.1"
     readable-stream "^2.0.2"
@@ -3513,7 +3513,7 @@ imagemin@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/imagemin/-/imagemin-5.3.1.tgz#f19c2eee1e71ba6c6558c515f9fc96680189a6d4"
   dependencies:
-    file-type "^4.1.0"
+    file-types "^4.1.0"
     globby "^6.1.0"
     make-dir "^1.0.0"
     p-pipe "^1.1.0"
@@ -5204,7 +5204,7 @@ path-to-regexp@0.1.7:
 
 path-type@^1.0.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/path-type/-/path-type-1.1.0.tgz#59c44f7ee491da704da415da5a4070ba4f8fe441"
+  resolved "https://registry.yarnpkg.com/path-types/-/path-types-1.1.0.tgz#59c44f7ee491da704da415da5a4070ba4f8fe441"
   dependencies:
     graceful-fs "^4.1.2"
     pify "^2.0.0"
@@ -5212,7 +5212,7 @@ path-type@^1.0.0:
 
 path-type@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/path-type/-/path-type-2.0.0.tgz#f012ccb8415b7096fc2daa1054c3d72389594c73"
+  resolved "https://registry.yarnpkg.com/path-types/-/path-types-2.0.0.tgz#f012ccb8415b7096fc2daa1054c3d72389594c73"
   dependencies:
     pify "^2.0.0"
 
@@ -5760,7 +5760,7 @@ read-pkg@^1.0.0:
   dependencies:
     load-json-file "^1.0.0"
     normalize-package-data "^2.3.2"
-    path-type "^1.0.0"
+    path-types "^1.0.0"
 
 read-pkg@^2.0.0:
   version "2.0.0"
@@ -5768,7 +5768,7 @@ read-pkg@^2.0.0:
   dependencies:
     load-json-file "^2.0.0"
     normalize-package-data "^2.3.2"
-    path-type "^2.0.0"
+    path-types "^2.0.0"
 
 "readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.2.9, readable-stream@^2.3.0, readable-stream@^2.3.3, readable-stream@^2.3.5, readable-stream@^2.3.6:
   version "2.3.6"
@@ -6906,7 +6906,7 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
 
 type-is@~1.6.15, type-is@~1.6.16:
   version "1.6.16"
-  resolved "https://registry.yarnpkg.com/type-is/-/type-is-1.6.16.tgz#f89ce341541c672b25ee7ae3c73dee3b2be50194"
+  resolved "https://registry.yarnpkg.com/types-is/-/types-is-1.6.16.tgz#f89ce341541c672b25ee7ae3c73dee3b2be50194"
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.18"

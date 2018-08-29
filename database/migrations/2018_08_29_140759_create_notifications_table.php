@@ -15,7 +15,7 @@ class CreateNotificationsTable extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->uuid('id')->primary()->comment('主键ID');
-            $table->string('type')
+            $table->string('types')
                 ->comment('通知类型');
             $table->unsignedBigInteger('notifiable_id')
                 ->comment('通知消息 ID');

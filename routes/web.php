@@ -21,7 +21,7 @@ Route::get('/child', function () {
 Route::get('/welcome', function () {
 	return view('start', [
 		'name' => 'Hello world!',
-		'content' => '<script type="text/javascript">alert("1111");</script>',
+		'content' => '<script types="text/javascript">alert("1111");</script>',
 		'array' => ['name' => 'test', 'created_at' => time()]
 	]);
 });

@@ -68,4 +68,15 @@ class User extends Authenticatable
         $this->increment('notification_count');
         $this->inform($instance);
     }
+
+    /**
+     * 标记消息为已读
+     */
+    public function markAsRead()
+    {
+        $this->notification_count = 0;
+        $this->save();
+
+        $this->unreadNotifications()->update(['read_at' => now()]);
+    }
 }
